@@ -1,0 +1,73 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>
+      DEDICACES MESSAGE
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+
+    <ion-card *ngFor="let item of todos">
+      
+        <ng-container *ngIf="!todos || todos.length == 0">
+            <div *ngFor="let n of [0,1,2]" padding>
+              <ion-skeleton-text></ion-skeleton-text>
+              <p>
+                <ion-skeleton-text class="fake-skeleton"></ion-skeleton-text>
+              </p>
+            </div>
+          </ng-container>
+
+
+        <ion-card-header>
+          <ion-card-subtitle>{{ item.telephone }}</ion-card-subtitle>
+          <ion-card-title>{{ item.nom }}</ion-card-title>
+        </ion-card-header>
+      
+        <ion-card-content>
+            {{ item.task }}
+            <p><ion-note slot="end" color="primary">{{ item.createdAt| date:'short'  }}</ion-note></p>
+        </ion-card-content>
+        
+      </ion-card>
+ 
+  <!-- <ion-list>
+ 
+    <ng-container *ngIf="!todos || todos.length == 0">
+      <div *ngFor="let n of [2,1,0]" padding>
+        <ion-skeleton-text></ion-skeleton-text>
+        <p>
+          <ion-skeleton-text class="fake-skeleton"></ion-skeleton-text>
+        </p>
+      </div>
+    </ng-container>
+
+    <ion-item-sliding *ngFor="let item of todos">
+      <ion-item >
+        <ion-label>
+           <p>{{ item.nom }}</p> 
+          <p>{{ item.task }}</p>
+          <p>{{ item.telephone}}</p>
+        </ion-label>
+        <ion-note slot="end" color="primary">{{ item.createdAt| date:'short'  }}</ion-note>
+      </ion-item>
+
+ 
+      <ion-item-options side="end">
+        <ion-item-option (click)="remove(item)" color="secondary">
+          Check
+          <ion-icon name="checkmark" slot="end"></ion-icon>
+        </ion-item-option>
+      </ion-item-options>
+    </ion-item-sliding>
+ 
+  </ion-list> -->
+ 
+  <!-- <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button routerLink="/details" routerDirection="forward">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab> -->
+
+</ion-content>

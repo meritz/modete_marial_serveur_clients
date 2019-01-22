@@ -1,0 +1,7 @@
+{
+  "name": "radioMassageRecive",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}
